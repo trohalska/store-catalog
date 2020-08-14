@@ -1,15 +1,52 @@
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+ul,
+li,
+button,
+input,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
+/* -------------------------------------------------------- *
+ * ------------------------ GENERAL ----------------------- *
+ * -------------------------------------------------------- */
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.shadow-large {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+.hidden {
+  display: none;
+}
+
+.red {
+  border: 1px solid red;
+}
+/* -------------------------------------------------------- */
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  margin: 0;
   color: #494d5f;
-
 }
+.page {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  max-width: 1240px;
+}
+.page-header {
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+}
+/* body.active {
+  overflow: hidden;
+  z-index: -1;
+} */
 /* #main-overlay {
   position: absolute;
   height: 100%;
@@ -21,44 +58,24 @@ body {
   background: rgba(73, 77, 95, 0.8);
   z-index: -1;
 } */
-
-ul, button, input, textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-  padding: 0;
-}
-a {
-  text-decoration: none;
-}
-li {
-  list-style: none;
-}
-/* body.active {
-  overflow: hidden;
-  z-index: -1;
-} */
-.shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.shadow-large {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-.container {
-  margin: 0 20px;
-}
-.hidden {
-  display: none;
-}
 /* -------------------------------------------------------- *
  * ------------------------- HEADER ----------------------- *
  * -------------------------------------------------------- */
 
+
 .header {
+  position: relative;
   text-align: center;
-  z-index: 10;
   border-bottom: 1px solid #efefef;
   padding: 40px 20px 0 20px;
+}
+.header-top-back {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #e5eaf5;
 }
 /* header.active {
   display: block;
@@ -66,6 +83,7 @@ li {
 #menu.active {
   display: block;
 } */
+
 /* -------------------------------------------------------- *
  * --------------------- HEADER - TOP --------------------- *
  * -------------------------------------------------------- */
@@ -77,8 +95,7 @@ li {
   left: 0;
   right: 0;
   text-align: center;
-  padding: 5px 0;
-  z-index: 10;
+  padding: 5px 20px;
   background: #e5eaf5b4;
   animation-name: dropHeader;
   animation-iteration-count: 1;
@@ -89,9 +106,16 @@ li {
   0% {transform: translateY(-100%);}
   100% {transform: translateY(0);}
 }
-.header-top > .header-features {flex: 2;}
-.header-top > .header-menu     {flex: 5;}
-/* .header-top > .header-search   {flex: 2;} */
+.header-top > .header-features {
+  flex: 1;
+  text-align: left;}
+.header-top > .header-menu {
+  flex: 1;
+}
+.header-top > .header-search {
+  flex: 1;
+  text-align: right;
+}
 
 .header-top > .header-features,
 .header-top > .header-search {
@@ -120,7 +144,6 @@ li {
 .header-top a:focus,
 .header-top a:hover {
   border-bottom: 1px solid #8458B3;
-  outline: none;
 }
 /* -------------------------------------------------------- *
  * ------------------- HEADER - MIDDLE -------------------- *
@@ -134,26 +157,164 @@ li {
 .logo {
   font-size: 40px;
   align-self: center;
+  margin: 20px 0 30px 0;
+}
+.header-basket {
+  cursor: pointer;
+}
+/* -------------------------------------------------------- *
+ * ------------------------ CRUMBS ------------------------ *
+ * -------------------------------------------------------- */
+.breadcrumps {
+  margin: 15px 0;
+
+}
+.crumbs {
+  height: 25px;
+}
+.crumbs a {
+  float: left;
+  height: 15px;
+  background: #e5eaf5;
+  color: #494d5f;
+  text-align: center;
+  padding: 5px 20px;
+  position: relative;
+  margin: 0 12px 0 0;
+  font-size: .8em;
+}
+/* .crumbs a {
+  color: #494d5f;
+} */
+.crumbs a::after {
+  content: "";
+  border-top: 13px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #e5eaf5;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+.crumbs a::before {
+  content: "";
+  border-top: 13px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.breadcrumps li:first-child a {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.breadcrumps li:first-child a::before {
+  display: none;
+}
+.breadcrumps li:last-child a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.breadcrumps li:last-child a::after {
+  display: none;
+}
+.crumbs li:hover a {
+  background: #d7dce6;
+  color: #8458B3;
+}
+.crumbs li:hover a::after {
+  border-left-color: #d7dce6;
+}
+/* .crumbs a:link, .crumbs a:visited {
+  text-decoration: none;
+  color: #777;
+} */
+.crumbs a:focus {
+  color: #8458B3;
+  background: #d7dce6;
+  outline: none;
+}
+.crumbs a:focus::after {
+  border-left-color: #d7dce6;
 }
 /* -------------------------------------------------------- *
  * ------------------------- MAIN ------------------------- *
  * -------------------------------------------------------- */
- main {
+main {
 
-  /* background: url(images/bg.jpg);
+  /* background: url(/images/bg.jpg);
   background-size: cover;
   overflow: hidden; */
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 /* -------------------------------------------------------- *
  * ----------------------- FILTERS ------------------------ *
  * -------------------------------------------------------- */
-
+/* .filters {
+  flex: 1;
+} */
+aside {
+  padding: 25px 10px;
+}
+.filterbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.filterbox input {
+  position: absolute;
+  visibility: hidden;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+.filterbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.filterbox input:checked ~ .checkmark {
+  background-color: #8458B3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.filterbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.filterbox .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 3px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* ------------------------------------------------ slider */
 
 /* -------------------------------------------------------- *
  * ---------------------- CONTAINER ----------------------- *
  * -------------------------------------------------------- */
+/* .container {
+  margin: 0 20px;
+} */
 .row {
   display: flex;
 }
@@ -194,6 +355,38 @@ li {
   font-size: 20px;
   line-height: 35px;
 }
+/* -------------------------------------------------------- *
+ * ------------------------- CARD ------------------------- *
+ * -------------------------------------------------------- */
+.basket-back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(238, 238, 238, 0.6);
+  z-index: 1;
+}
+#cart {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 10vh auto;
+  padding: 10px;
+  background: white;
+  z-index: 2;
+}
+/* .cart_decrement,
+.cart_increment {
+  font-size: 18px;
+  line-height: 5px;
+  text-decoration: none;
+} */
+/* .cart_info {
+  text-align: right;
+  padding: 0 0 15px;
+} */
+
 /*--------------------------------------------------------*/
 /*
 .headerRow {
@@ -222,25 +415,7 @@ li {
 .itemRow .item-quantity {
   text-align: center;
 }
-.simpleCart_decrement,
-.simpleCart_increment {
-  font-size: 18px;
-  line-height: 5px;
-  text-decoration: none;
-}
-.cart_info {
-  text-align: right;
-  padding: 0 0 15px;
-}
-.cart_info div {
-  display: inline;
-}
-.cart_info_item {
-  display: block !important;
-}
-.cart_total {
-  font-size: 20px;
-} */
+ */
 
 /* -------------------------------------------------------- *
  * ----------------------- FOOTER ------------------------- *
@@ -252,8 +427,7 @@ footer {
   left: 0;
   right: 0;
   padding: 5px 0;
-  z-index: 10;
-  background: #e5eaf5b4;
+  background: #e5eaf5;
   padding: 0 20px;
 }
 .footflexbox {

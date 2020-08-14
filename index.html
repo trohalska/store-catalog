@@ -12,13 +12,16 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css"/>
   <link rel="stylesheet" href="css/styles.css"/>
+  <!-- <link rel="stylesheet" href="css/exp.css"/> -->
 </head>
 
 <body>
   <header class="header">
+    <div class="header-top-back"></div>
 
-    <div class="header-top shadow">
+    <div class="header-top page">
       <div class="header-features">
         <span data-text="We deliver free of charge throughout Ukraine.">
         <span>Free delivery in Ukraine!</span>
@@ -42,33 +45,66 @@
       </div>
     </div>
 
-    <div class="header-middle">
+    <div class="header-middle page">
       <div class="header-contact">
         <span>(044) 044 04 04</span>
       </div>
       <div title="internet shop" class="logo">LOGO</div>
-      <div class="header-right">
-        <div class="header-right-row">
-          <div class="header-basket empty">
-            <span>cart<span>(0)</span></span>
-          </div>
-        </div>
+      <div>
+        <a class="header-basket empty" onclick="openBasket()">
+          cart<span>(0)</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <main>
-    <div id="main-overlay"></div>
+  <nav class="breadcrumps">
+    <ul class="page crumbs">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Main section</a></li>
+      <li><a href="#">Sub section</a></li>
+      <li><a href="#">Sub sub section</a></li>
+      <!-- <li>The page you are on right now</li> -->
+    </ul>
+  </nav>
+  <!-- <section class="about">About</section> -->
+
+  <main class="page red">
+    <!-- <div id="main-overlay"></div> -->
+
     <!-- Filters
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="filters">
-      <p>
-        filters
-      </p>
-    </div>
+    <aside class="filters red">
+      <div>
+        <p>Filters:</p>
+        <label class="filterbox">One
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Two
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Four
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="slider">
+        slider
+      </div>
+
+
+      <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> -->
+    </aside>
     <!-- Primary Page Layout
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
+    <div class="container red">
 
       <div class="row">
 
@@ -77,11 +113,11 @@
             <img src="https://i.postimg.cc/Dz992d38/wonder-woman-pic.jpg" class="item_thumb">
             <h5 class="item_name">item 1</h5>
             <select class="item_size">
-              <option value="Small"> Small </option>
-              <option value="Medium"> Medium </option>
-              <option value="Large"> Large </option>
+              <option value="Small"> 300 ml </option>
+              <option value="Medium"> 500 ml </option>
+              <option value="Large"> 1000 ml </option>
             </select>
-            <div class="qty">QTY</div><input type="text" value="1" class="item_Quantity">
+            <div class="qty">quantity</div><input type="text" value="1" class="item_Quantity">
             <span class="item_price">$35.99</span>
             <a class="item_add button u-pull-right" href="javascript:;"> Add to Cart </a>
           </div>
@@ -92,11 +128,11 @@
             <img src="https://i.postimg.cc/Dz992d38/wonder-woman-pic.jpg" class="item_thumb">
             <h5 class="item_name">item 2</h5>
             <select class="item_size">
-              <option value="Small"> Small </option>
-              <option value="Medium"> Medium </option>
-              <option value="Large"> Large </option>
+              <option value="Small"> 300 ml </option>
+              <option value="Medium"> 500 ml </option>
+              <option value="Large"> 1000 ml </option>
             </select>
-            <div class="qty">QTY</div><input type="text" value="1" class="item_Quantity">
+            <div class="quantity">quantity</div><input type="text" value="1" class="item_Quantity">
             <span class="item_price">$20.99</span>
             <a class="item_add button u-pull-right" href="javascript:;"> Add to Cart </a>
           </div>
@@ -107,11 +143,11 @@
             <img src="https://i.postimg.cc/Dz992d38/wonder-woman-pic.jpg" class="item_thumb">
             <h5 class="item_name">item 3</h5>
             <select class="item_size">
-              <option value="Small"> Small </option>
-              <option value="Medium"> Medium </option>
-              <option value="Large"> Large </option>
+              <option value="Small"> 300 ml </option>
+              <option value="Medium"> 500 ml </option>
+              <option value="Large"> 1000 ml </option>
             </select>
-            <div class="qty">QTY</div><input type="text" value="1" class="item_Quantity">
+            <div class="qty">quantity</div><input type="text" value="1" class="item_Quantity">
             <span class="item_price">$15.99</span>
             <a class="item_add button u-pull-right" href="javascript:;"> Add to Cart </a>
           </div>
@@ -123,27 +159,19 @@
   </main>
   <!-- Cart Page Layout
    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="hidden">
-    <div id="cart">
-      <h2>Cart</h2>
-      <div class="row">
-
-        <div class="eight columns">
-          <div class="simpleCart_items"></div>
-        </div>
-
-        <div class="four columns">
-          <div class="cart_info">
-            <div class="cart_info_item cart_itemcount">Items: <div class="simpleCart_quantity"></div></div>
-            <div class="cart_info_item cart_taxrate">Tax Rate: <div class="simpleCart_taxRate"></div></div>
-            <div class="cart_info_item cart_tax">Tax: <div class="simpleCart_tax"></div></div>
-            <div class="cart_info_item cart_shipping">Shipping: <div class="simpleCart_shipping"></div></div>
-            <div class="cart_info_item cart_total"><b>Total: <div class="simpleCart_grandTotal"></div></b></div>
-          </div>
-        </div>
-
-        <a href="javascript:;" class="simpleCart_empty button u-pull-left">Empty Cart <i class="fa fa-trash-o"></i></a>
-        <a href="javascript:;" class="button button-primary simpleCart_checkout u-pull-right">Checkout <i class="fa fa-arrow-right"></i></a>
+  <div class="basket hidden">
+    <div class="basket-back"></div>
+    <div id="cart" class="shadow-large">
+      <div class="page-header">Cart</div>
+      <div class="cart_items"></div>
+      <div class="cart_total">Total: <div class="cart_grandTotal"></div></div>
+      <div class="cart-controls">
+        <div data-location="/checkout/" class="button">Buy</div>
+        <div class="link">Continue shopping</div>
+      </div>
+      <div class="close-icon"></div>
+        <!-- <a href="javascript:;" class="cart_empty button u-pull-left">Empty Cart <i class="fa fa-trash-o"></i></a>
+        <a href="javascript:;" class="button button-primary cart_checkout u-pull-right">Checkout <i class="fa fa-arrow-right"></i></a> -->
 
       </div>
     </div>
@@ -151,8 +179,10 @@
 
   <!-- footer
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
   <footer>
-    <div class="container footflexbox">
+    <div class="footer-back"></div>
+    <div class="footflexbox page">
       <div class="copyright footbox">
         <p>Copyright &copy; 2020 | LOGO | All Rights Reserved</p>
       </div>
@@ -163,5 +193,5 @@
   </footer>
 
 </body>
-
+<script src="js/script.js"></script>
 </html>
