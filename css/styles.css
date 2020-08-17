@@ -9,6 +9,9 @@ textarea {
   padding: 0;
   list-style-type: none;
 }
+a {
+  color: #8458B3;
+}
 /* -------------------------------------------------------- *
  * ------------------------ GENERAL ----------------------- *
  * -------------------------------------------------------- */
@@ -21,9 +24,22 @@ textarea {
 .hidden {
   display: none;
 }
-
+.button {
+  background: #e5eaf5;
+  padding: 8px;
+  border-radius: 4px;
+  color: #8458B3;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  background: #d7dce6;
+}
 .red {
   border: 1px solid red;
+}
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
 }
 /* -------------------------------------------------------- */
 body {
@@ -62,6 +78,9 @@ body {
  * ------------------------- HEADER ----------------------- *
  * -------------------------------------------------------- */
 
+ :root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}
 
 .header {
   position: relative;
@@ -161,7 +180,21 @@ body {
 }
 .header-basket {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+.icon-cart {
+  fill: #494d5f;
+  margin-right: 5px;
+}
+/* .header-basket::before{
+  content: '';
+  background:url('/images/store.png');
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+} */
 /* -------------------------------------------------------- *
  * ------------------------ CRUMBS ------------------------ *
  * -------------------------------------------------------- */
@@ -241,7 +274,6 @@ body {
  * ------------------------- MAIN ------------------------- *
  * -------------------------------------------------------- */
 main {
-
   /* background: url(/images/bg.jpg);
   background-size: cover;
   overflow: hidden; */
@@ -268,6 +300,8 @@ aside {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-weight: 300;
+  font-size: .9em;
 }
 .filterbox input {
   position: absolute;
@@ -315,45 +349,65 @@ aside {
 /* .container {
   margin: 0 20px;
 } */
-.row {
-  display: flex;
-}
 .one-third {
+  /* flex: 1; */
+  float: left;
   margin: 10px;
+}
+.column {
+  width: 320px;
+}
+.shelfItem {
+  /* display: flex;
+  flex-direction: column; */
+  border: 1px solid #efefef;
+  padding: 20px;
+}
+.shelfItem h5 {
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+}
+.shelfItem p {
+  font-size: .8em;
+  font-weight: 300;
+  color: #74808a;
+  text-align: justify;
 }
 .item_thumb {
   min-width: 30px;
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 15px;
-
   display: block;
   margin: 0 auto;
   padding-bottom: 10px;
 }
-.shelfItem {
-  border: 1px solid #efefef;
-  padding: 20px;
-  margin: 15px 0;
+.shelfDescribe {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .item_size {
-  display: block;
-  float: left;
-  margin-right: 10px;
-}
-.item_Quantity {
-  display: block;
-  width: 50px;
-}
-.qty {
-  display: block;
-  float: left;
-  line-height: 40px;
-  margin-right: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: .8em;
 }
 .item_price {
   font-weight: 700;
   font-size: 20px;
-  line-height: 35px;
+  /* line-height: 35px; */
+}
+.avlb,
+.notavlb {
+  font-size: .8em;
+  font-weight: 200;
+}
+.avlb {
+  color: green;
+}
+.notavlb {
+  color: red;
 }
 /* -------------------------------------------------------- *
  * ------------------------- CARD ------------------------- *
@@ -369,24 +423,34 @@ aside {
 }
 #cart {
   position: relative;
-  width: 300px;
-  height: 300px;
+  /* display: flex;
+  flex-direction: column; */
+  width: 80vw;
+  height: 30vh;
   margin: 10vh auto;
   padding: 10px;
   background: white;
   z-index: 2;
 }
-/* .cart_decrement,
-.cart_increment {
-  font-size: 18px;
-  line-height: 5px;
-  text-decoration: none;
-} */
-/* .cart_info {
+#cart > * {
+  margin: 10px 0;
+}
+.cart-total {
   text-align: right;
-  padding: 0 0 15px;
-} */
-
+}
+.cart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-controls a {
+  font-size: .8em;
+  color: #74808a;
+  border-bottom: 1px solid #ccc;
+}
+.cart-controls > .buy {
+  padding: 5px 30px;
+}
 /*--------------------------------------------------------*/
 /*
 .headerRow {
@@ -429,7 +493,19 @@ footer {
   padding: 5px 0;
   background: #e5eaf5;
   padding: 0 20px;
+
+  /* position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%; */
+
+  /* width: 800px;
+	height: 150px;
+	background: #66cc00;
+	margin:auto;
+	clear:both; */
 }
+
 .footflexbox {
   display: flex;
   flex-direction: row;

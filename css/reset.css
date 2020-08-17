@@ -123,6 +123,8 @@ button {
 button,
 select {
   text-transform: none;
+  text-decoration: none;
+  outline: none;
 }
 button,
 html input[type="button"],
