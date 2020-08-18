@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/reset.css"/>
   <link rel="stylesheet" href="css/styles.css"/>
   <!-- <link rel="stylesheet" href="css/exp.css"/> -->
+  <script src="js/script.js"></script>
+  <script src="js/show.js"></script>
 </head>
 
 <body>
@@ -71,7 +73,7 @@
             l-9.955,31.064H329.359z"/>
           </svg>
         </span>
-        <a class="empty">cart<span>(0)</span></a>
+        <a>cart<span class="front-cart">(0)</span></a>
       </div>
     </div>
   </header>
@@ -126,9 +128,9 @@
   <div class="basket hidden">
     <div class="basket-back"></div>
     <div id="cart" class="shadow-large">
-      <div class="page-header">Cart</div>
+      <div class="page-header cart-header">Cart</div>
       <div class="cart-items"></div>
-      <div class="cart-total">Total: <span class="cart-numTotal">0</span></div>
+      <div class="cart-total">Total: <span class="cart-numTotal item_price">$36.98</span></div>
       <div class="cart-controls">
         <a href="#" class="continue">Continue shopping</a>
         <div data-location="/checkout" class="buy button">Buy</div>
@@ -155,5 +157,5 @@
   </footer>
 
 </body>
-<script src="js/script.js"></script>
+
 </html>
