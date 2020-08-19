@@ -24,16 +24,30 @@ a {
 .hidden {
   display: none;
 }
+.button-empty {
+  cursor: default;
+  background: transparent;
+
+  color: transparent;
+
+}
 .button {
   background: #e5eaf5;
+
+  color: #8458B3;
+
+}
+.container input {
   padding: 8px;
   border-radius: 4px;
-  color: #8458B3;
+  border: none;
+  outline: none;
 }
 .button:hover,
 .button:active,
 .button:focus {
   background: #d7dce6;
+  border: none;
 }
 .red {
   border: 1px solid red;
@@ -300,7 +314,11 @@ main.page {
 aside {
   padding: 25px 10px;
 }
-.filterbox {
+.sort-select{
+  font-weight: 300;
+  font-size: .9em;
+}
+.filterbox{
   display: block;
   position: relative;
   padding-left: 30px;
@@ -354,8 +372,8 @@ aside {
 /* -------------------------------------------------------- *
  * ---------------------- CONTAINER ----------------------- *
  * -------------------------------------------------------- */
-/* .container {
-  margin: 0 20px;
+/* .container * {
+  border: 1px solid red;
 } */
 .one-third {
   /* flex: 1; */
@@ -371,13 +389,14 @@ aside {
   border: 1px solid #efefef;
   padding: 20px;
 }
-/* .shelfItem h5 {
-  width: 100%;
+.shelfItem h5 {
+  height: 40px;
+  /* width: 100%;
   margin: 10px 0;
   font-size: 1em;
   font-weight: 400;
-  text-align: center;
-} */
+  text-align: center; */
+}
 .shelfItem p {
   font-size: .8em;
   font-weight: 300;
@@ -387,6 +406,7 @@ aside {
 .item_thumb {
   min-width: 30px;
   max-width: 200px;
+  max-height: 190px;
   border-radius: 15px;
   display: block;
   margin: 0 auto;
@@ -430,11 +450,12 @@ aside {
   z-index: 1;
 }
 #cart {
-  position: relative;
-  /* display: flex;
-  flex-direction: column; */
-  width: 600px;
-  min-height: 30vh;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  max-width: 600px;
+  min-height: 20vh;
   margin: 10vh auto;
   padding: 40px;
   background: white;
@@ -507,6 +528,7 @@ aside {
 }
 .cart-controls > .buy {
   padding: 5px 30px;
+  border-radius: 4px;
 }
 /*--------------------------------------------------------*/
 /*

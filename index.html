@@ -84,39 +84,46 @@
     </ul>
   </nav>
 
-  <!-- <input id="elem" type="button" value="Нажми меня!">
-  <script>
-    elem.onclick = function() {
-      alert('Спасибо');
-    };
-  </script> -->
-
   <main class="page">
     <!-- <div id="main-overlay"></div> -->
 
     <aside class="filters">
-      <div>
-        <p>Filters:</p>
-        <label class="filterbox">one
-          <input type="checkbox" checked="checked">
-          <span class="checkmark"></span>
-        </label>
-        <label class="filterbox">two
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="filterbox">three
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="filterbox">four
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
+      <div class="sort">
+        <p>Sort:</p>
+        <select class="sort-select">
+          <option value="1">none</option>
+          <option value="2">cheap first</option>
+          <option value="3">expensive first</option>
+
+        </select>
       </div>
 
-      <div class="slider">
-        slider
+      <div>
+        <p>Brand:</p>
+        <label class="filterbox">J'ELITE
+          <input type="checkbox" class="check-brand" value="J'ELITE">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">St.Dalfout
+          <input type="checkbox" class="check-brand" value="St.Dalfout">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Chantaine
+          <input type="checkbox" class="check-brand" value="Chantaine">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Dabur
+          <input type="checkbox" class="check-brand" value="Dabur">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Bionerica
+          <input type="checkbox" class="check-brand" value="Bionerica">
+          <span class="checkmark"></span>
+        </label>
+        <label class="filterbox">Triuga
+          <input type="checkbox" class="check-brand" value="Triuga">
+          <span class="checkmark"></span>
+        </label>
       </div>
       <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> -->
     </aside>
